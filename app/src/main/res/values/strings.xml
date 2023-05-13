@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HomeWork-three_two_repeat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name:</string>
+    <string name="surname">Surname:</string>
+    <string name="send">Send</string>
+    <string name="floor">Floor:</string>
+    <string name="age">Age:</string>
+    <string name="place_of_study">Place of study:</string>
+    <string name="place_of_work">Place of work:</string>
+    <string name="hello">Hello</string>
+</resources>
