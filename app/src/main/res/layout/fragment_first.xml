@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.FirstFragment">
 
     <EditText
         android:id="@+id/EditTextAge"
-        android:hint="@string/age"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="170dp"
         android:backgroundTint="@color/black"
+        android:hint="@string/age"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"/>
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/EditTextFloor"
-        android:hint="@string/floor"
-        app:layout_constraintTop_toBottomOf="@id/EditTextAge"
-        app:layout_constraintStart_toStartOf="@id/EditTextAge"
-        app:layout_constraintEnd_toEndOf="@id/EditTextAge"
-        android:layout_marginTop="16dp"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/black"
-        android:textColorHint="@color/black"/>
+        android:hint="@string/floor"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/EditTextAge"
+        app:layout_constraintStart_toStartOf="@id/EditTextAge"
+        app:layout_constraintTop_toBottomOf="@id/EditTextAge" />
+
+    <TextView
+        android:id="@+id/ElementaryName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/ElementarySurname"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ButtonFirst"
-        app:layout_constraintTop_toBottomOf="@id/EditTextFloor"
-        app:layout_constraintEnd_toEndOf="@id/EditTextFloor"
-        app:layout_constraintStart_toStartOf="@id/EditTextFloor"
-        android:layout_marginTop="20dp"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="@string/send"/>
+        android:layout_marginTop="20dp"
+        android:text="@string/send"
+        app:layout_constraintEnd_toEndOf="@id/EditTextFloor"
+        app:layout_constraintStart_toStartOf="@id/EditTextFloor"
+        app:layout_constraintTop_toBottomOf="@id/EditTextFloor" />
 </androidx.constraintlayout.widget.ConstraintLayout>

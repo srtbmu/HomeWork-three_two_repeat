@@ -33,11 +33,13 @@ public class ElementaryFragment extends Fragment {
         clickListener();
 //        dataTransfer();
     }
+
     private void findView() {
         ButtonElementary = requireActivity().findViewById(R.id.ButtonElementary);
         EditTextName = requireActivity().findViewById(R.id.EditTextName);
         EditTextSurname = requireActivity().findViewById(R.id.EditTextSurname);
     }
+
     private void clickListener() {
         ButtonElementary.setOnClickListener(v -> textCheck());
     }
@@ -47,7 +49,7 @@ public class ElementaryFragment extends Fragment {
             if (!EditTextSurname.getText().toString().isEmpty()) {
                 navigationFragment();
             } else {
-                Toast.makeText(getActivity(), "Вы не ввели свое фамиле  ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Вы не ввели свое фамиле", Toast.LENGTH_LONG).show();
             }
         } else {
             Toast.makeText(getActivity(), "Вы не ввели свое имя", Toast.LENGTH_LONG).show();

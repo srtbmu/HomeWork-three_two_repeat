@@ -32,6 +32,26 @@
         android:backgroundTint="@color/black"
         android:textColorHint="@color/black"/>
 
+    <TextView
+        android:id="@+id/FirstAge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/FirstFloor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/ElementaryName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/ElementarySurname"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ButtonSecond"
         app:layout_constraintTop_toBottomOf="@id/EditTextWork"

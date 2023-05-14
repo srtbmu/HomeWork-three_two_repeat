@@ -14,8 +14,8 @@ import android.widget.Toast;
 import com.example.homework_three_two_repeat.R;
 
 public class HumanDataFragment extends Fragment {
-    TextView TextViewName, TextViewSurname;
-    String Name, Surname;
+    TextView TextViewName, TextViewSurname,TexViewAge,TextViewFloor,TextViewStudies,TextViewWork;
+    String Name, Surname,Age,Floor,Studies,Work;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,21 +33,32 @@ public class HumanDataFragment extends Fragment {
     private void setValue() {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
+            setView();
             Name = bundle.getString("Name");
             Surname = bundle.getString("Surname");
-            TextViewName.setText(Name);
-            TextViewSurname.setText(Surname);
+            Age = bundle.getString("Age");
+            Floor = bundle.getString("Floor");
+            Studies = bundle.getString("Studies");
+            Work = bundle.getString("Work");
         }
     }
 
-//    private void setView() {
-//        TextViewName.setText(Name);
-//        TextViewSurname.setText(Surname);
-//    }
+    private void setView() {
+        TextViewName.setText(Name);
+        TextViewSurname.setText(Surname);
+        TexViewAge.setText(Age);
+        TextViewFloor.setText(Floor);
+        TextViewStudies.setText(Studies);
+        TextViewWork.setText(Work);
+    }
 
     private void findView() {
         TextViewName = requireView().findViewById(R.id.TextViewName);
         TextViewSurname = requireView().findViewById(R.id.TextViewSurname);
+        TexViewAge = requireView().findViewById(R.id.TextViewAge);
+        TextViewFloor = requireView().findViewById(R.id.TextViewFloor);
+        TextViewStudies = requireActivity().findViewById(R.id.TextViewStudies);
+        TextViewWork = requireView().findViewById(R.id.TextViewWork);
     }
 }
 

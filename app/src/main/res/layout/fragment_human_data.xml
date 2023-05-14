@@ -84,7 +84,7 @@
     <TextView
         android:textColorHint="@color/black"
         android:textAlignment="center"
-        android:id="@+id/TextViewJob"
+        android:id="@+id/TextViewWork"
         android:text="@string/hello"
         android:textColor="@color/black"
         android:textStyle="italic"
