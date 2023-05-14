@@ -33,13 +33,15 @@ public class HumanDataFragment extends Fragment {
     private void setValue() {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            setView();
             Name = bundle.getString("Name");
             Surname = bundle.getString("Surname");
             Age = bundle.getString("Age");
             Floor = bundle.getString("Floor");
             Studies = bundle.getString("Studies");
             Work = bundle.getString("Work");
+            setView();
+        }else{
+            Toast.makeText(getActivity(), "HumanDataFragment", Toast.LENGTH_LONG).show();
         }
     }
 

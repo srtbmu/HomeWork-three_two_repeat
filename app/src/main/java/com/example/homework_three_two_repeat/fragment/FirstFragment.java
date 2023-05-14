@@ -22,7 +22,7 @@ import java.util.jar.Attributes;
 public class FirstFragment extends Fragment {
     AppCompatButton ButtonFirst;
     EditText EditTextAge, EditTextFloor;
-    String Age, Floor,Name,Surname;
+    String Age,Floor,Name,Surname;
     TextView ElementaryName, ElementarySurname;
 
     @Override
@@ -51,6 +51,7 @@ public class FirstFragment extends Fragment {
     private void setView(){
         ElementaryName.setText(Name);
         ElementarySurname.setText(Surname);
+
     }
 
     private void findView() {
@@ -64,6 +65,8 @@ public class FirstFragment extends Fragment {
     private void dataTransfer() {
         Age = EditTextAge.getText().toString();
         Floor = EditTextFloor.getText().toString();
+        Name = ElementaryName.getText().toString();
+        Surname = ElementarySurname.getText().toString();
     }
 
     private void clickListener() {
@@ -87,6 +90,8 @@ public class FirstFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putString("Age", Age);
         bundle.putString("Floor", Floor);
+        bundle.putString("Name",Name);
+        bundle.putString("Surname",Surname);
         SecondFragment secondFragment = new SecondFragment();
         secondFragment.setArguments(bundle);
         requireActivity()

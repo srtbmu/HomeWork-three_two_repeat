@@ -83,6 +83,10 @@ public class SecondFragment extends Fragment {
     private void dataTransfer(){
         Studies = EditTextStudies.getText().toString();
         Work = EditTextWork.getText().toString();
+        Name = ElementaryName.getText().toString();
+        Surname = ElementarySurname.getText().toString();
+        Age = FirstAge.getText().toString();
+        Floor = FirstFloor.getText().toString();
     }
 
     private void navigationFragment() {
@@ -90,6 +94,10 @@ public class SecondFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putString("Studies",Studies);
         bundle.putString("Work",Work);
+        bundle.putString("Name",Name);
+        bundle.putString("Surname",Surname);
+        bundle.putString("Age",Age);
+        bundle.putString("Floor",Floor);
         HumanDataFragment humanDataFragment = new HumanDataFragment();
         humanDataFragment.setArguments(bundle);
         requireActivity()
