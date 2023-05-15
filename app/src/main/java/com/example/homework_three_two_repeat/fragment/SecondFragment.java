@@ -18,9 +18,10 @@ import com.example.homework_three_two_repeat.R;
 
 public class SecondFragment extends Fragment {
     AppCompatButton ButtonSecond;
-    EditText EditTextStudies,EditTextWork;
-    String Studies,Work,Age,Floor,Name,Surname;
-    TextView ElementarySurname,ElementaryName,FirstAge,FirstFloor;
+    EditText EditTextStudies, EditTextWork;
+    String Studies, Work, Age, Floor, Name, Surname;
+    TextView ElementarySurname, ElementaryName, FirstAge, FirstFloor;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,41 +36,6 @@ public class SecondFragment extends Fragment {
         setValue();
     }
 
-    private void setValue(){
-        Bundle bundle = this.getArguments();
-        if (bundle!= null){
-            Name = bundle.getString("Name");
-            Surname = bundle.getString("Surname");
-            Age = bundle.getString("Age");
-            Floor = bundle.getString("Floor");
-            setView();
-        }
-    }
-
-    private void setView() {
-    ElementaryName.setText(Name);
-    ElementarySurname.setText(Surname);
-    FirstAge.setText(Age);
-    FirstFloor.setText(Floor);
-    }
-
-    private void clickListener() {
-        ButtonSecond.setOnClickListener(v ->
-                textCheck());
-    }
-
-    private void textCheck(){
-        if (!EditTextStudies.getText().toString().isEmpty()){
-            if (!EditTextWork.getText().toString().isEmpty()){
-                navigationFragment();
-            }else{
-                Toast.makeText(getActivity(), "Вы не ввели свой адрес работы", Toast.LENGTH_LONG).show();
-            }
-        }else {
-            Toast.makeText(getActivity(), "Вы не ввели свой адрес учебы", Toast.LENGTH_LONG).show();
-        }
-    }
-
     private void findView() {
         ButtonSecond = requireActivity().findViewById(R.id.ButtonSecond);
         EditTextStudies = requireActivity().findViewById(R.id.EditTextStudies);
@@ -80,7 +46,24 @@ public class SecondFragment extends Fragment {
         FirstFloor = requireActivity().findViewById(R.id.FirstFloor);
     }
 
-    private void dataTransfer(){
+    private void clickListener() {
+        ButtonSecond.setOnClickListener(v ->
+                textCheck());
+    }
+
+    private void textCheck() {
+        if (!EditTextStudies.getText().toString().isEmpty()) {
+            if (!EditTextWork.getText().toString().isEmpty()) {
+                navigationFragment();
+            } else {
+                Toast.makeText(getActivity(), "Вы не ввели свой адрес работы", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(getActivity(), "Вы не ввели свой адрес учебы", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void dataTransfer() {
         Studies = EditTextStudies.getText().toString();
         Work = EditTextWork.getText().toString();
         Name = ElementaryName.getText().toString();
@@ -92,20 +75,38 @@ public class SecondFragment extends Fragment {
     private void navigationFragment() {
         dataTransfer();
         Bundle bundle = new Bundle();
-        bundle.putString("Studies",Studies);
-        bundle.putString("Work",Work);
-        bundle.putString("Name",Name);
-        bundle.putString("Surname",Surname);
-        bundle.putString("Age",Age);
-        bundle.putString("Floor",Floor);
+        bundle.putString("Studies", Studies);
+        bundle.putString("Work", Work);
+        bundle.putString("Name", Name);
+        bundle.putString("Surname", Surname);
+        bundle.putString("Age", Age);
+        bundle.putString("Floor", Floor);
         HumanDataFragment humanDataFragment = new HumanDataFragment();
         humanDataFragment.setArguments(bundle);
         requireActivity()
                 .getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.FragmentContainerView,humanDataFragment)
+                .replace(R.id.FragmentContainerView, humanDataFragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    private void setValue() {
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            Name = bundle.getString("Name");
+            Surname = bundle.getString("Surname");
+            Age = bundle.getString("Age");
+            Floor = bundle.getString("Floor");
+            setView();
+        }
+    }
+
+    private void setView() {
+        ElementaryName.setText(Name);
+        ElementarySurname.setText(Surname);
+        FirstAge.setText(Age);
+        FirstFloor.setText(Floor);
     }
 
 }

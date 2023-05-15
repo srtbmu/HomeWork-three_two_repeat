@@ -1,12 +1,10 @@
 package com.example.homework_three_two_repeat;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
 import com.example.homework_three_two_repeat.fragment.ElementaryFragment;
-import com.example.homework_three_two_repeat.fragment.FirstFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,10 +16,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void AddingFragment() {
-    getSupportFragmentManager()
-            .beginTransaction()
-            .add(R.id.FragmentContainerView , new ElementaryFragment())
-            .commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.FragmentContainerView, new ElementaryFragment())
+                .commit();
     }
-
 }

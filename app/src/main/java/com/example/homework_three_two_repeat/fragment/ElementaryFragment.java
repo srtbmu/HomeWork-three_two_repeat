@@ -43,11 +43,6 @@ public class ElementaryFragment extends Fragment {
         ButtonElementary.setOnClickListener(v -> textCheck());
     }
 
-    private void dataTransfer() {
-        Name = EditTextName.getText().toString();
-        Surname = EditTextSurname.getText().toString();
-    }
-
     private void textCheck() {
         if (!EditTextName.getText().toString().isEmpty()) {
             if (!EditTextSurname.getText().toString().isEmpty()) {
@@ -58,6 +53,11 @@ public class ElementaryFragment extends Fragment {
         } else {
             Toast.makeText(getActivity(), "Вы не ввели свое имя", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void dataTransfer() {
+        Name = EditTextName.getText().toString();
+        Surname = EditTextSurname.getText().toString();
     }
 
     private void navigationFragment() {

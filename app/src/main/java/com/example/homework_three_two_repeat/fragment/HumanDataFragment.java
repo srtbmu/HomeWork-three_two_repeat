@@ -11,11 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.homework_three_two_repeat.R;
 
 public class HumanDataFragment extends Fragment {
-    TextView TextViewName, TextViewSurname,TexViewAge,TextViewFloor,TextViewStudies,TextViewWork;
-    String Name, Surname,Age,Floor,Studies,Work;
+    TextView TextViewName, TextViewSurname, TexViewAge, TextViewFloor, TextViewStudies, TextViewWork;
+    String Name, Surname, Age, Floor, Studies, Work;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +31,15 @@ public class HumanDataFragment extends Fragment {
         setValue();
     }
 
+    private void findView() {
+        TextViewName = requireView().findViewById(R.id.TextViewName);
+        TextViewSurname = requireView().findViewById(R.id.TextViewSurname);
+        TexViewAge = requireView().findViewById(R.id.TextViewAge);
+        TextViewFloor = requireView().findViewById(R.id.TextViewFloor);
+        TextViewStudies = requireActivity().findViewById(R.id.TextViewStudies);
+        TextViewWork = requireView().findViewById(R.id.TextViewWork);
+    }
+
     private void setValue() {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
@@ -40,7 +50,7 @@ public class HumanDataFragment extends Fragment {
             Studies = bundle.getString("Studies");
             Work = bundle.getString("Work");
             setView();
-        }else{
+        } else {
             Toast.makeText(getActivity(), "HumanDataFragment", Toast.LENGTH_LONG).show();
         }
     }
@@ -52,15 +62,6 @@ public class HumanDataFragment extends Fragment {
         TextViewFloor.setText(Floor);
         TextViewStudies.setText(Studies);
         TextViewWork.setText(Work);
-    }
-
-    private void findView() {
-        TextViewName = requireView().findViewById(R.id.TextViewName);
-        TextViewSurname = requireView().findViewById(R.id.TextViewSurname);
-        TexViewAge = requireView().findViewById(R.id.TextViewAge);
-        TextViewFloor = requireView().findViewById(R.id.TextViewFloor);
-        TextViewStudies = requireActivity().findViewById(R.id.TextViewStudies);
-        TextViewWork = requireView().findViewById(R.id.TextViewWork);
     }
 }
 
